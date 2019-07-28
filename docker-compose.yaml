@@ -23,6 +23,9 @@ services:
       - ./web:/opt/project
     ports:
       - 8000:8000
+    environment:
+      EMAIL_PORT: 1025
+      EMAIL_HOST: smtp
     depends_on:
       - db
     restart: always
