@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-while ! mysqladmin ping -h"db:3306" --silent; do
-    sleep 1
+while ! mysqladmin ping -h db --silent; do
+    echo 'Waiting for mysql startup...'
+    sleep 3
 done
 
 python3 manage.py migrate
